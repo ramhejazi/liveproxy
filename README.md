@@ -5,6 +5,9 @@ LiveProxy can redirect Livestreams to your favorite player on a lot of devices.
 - Issue Tracker: https://github.com/back-to/liveproxy/issues
 - Github: https://github.com/back-to/liveproxy
 
+# Changes in this fork
+- Kill previous instances of streamlink (if any) before spawning new one. This makes switching streams faster.
+
 # INSTALLATION
 
 ## pip as user

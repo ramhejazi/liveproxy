@@ -62,7 +62,8 @@ class HTTPRequest(BaseHTTPRequestHandler):
             name=__name__.replace('liveproxy.', ''),
             random_id=random_id,
         ))
-
+        # Kill previous instances of streamlink before streaming the new url
+        subprocess.run("kill $(ps aux | grep 'streamlink' | awk '{print $2}')", shell=True)
         log.info(f'User-Agent: {self.headers.get("User-Agent", "???")}')
         log.info(f'Client: {self.client_address}')
         log.info(f'Address: {self.address_string()}')
